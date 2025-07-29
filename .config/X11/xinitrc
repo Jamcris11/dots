@@ -1,0 +1,21 @@
+export PULSE_LATENCY_MSEC=30
+
+systemctl --user import-environment DISPLAY
+dunst &
+xcompmgr &
+
+while true; do
+	/home/jamie/.scripts/dwm-status
+	sleep 10s
+done &
+
+while true ; do
+	xrdb "$XRESOURCES"
+	# needs non-hardcoded alternative
+	xrandr --output HDMI-A-0 --auto --output HDMI-A-1 --auto --left-of HDMI-A-0
+	xset r rate 170 40
+	wal -R
+	feh --no-fehbg --bg-scale "$(< "${HOME}/.cache/wal/wal")"
+
+	dwm && continue || break
+done
