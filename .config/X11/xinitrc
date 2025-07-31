@@ -1,7 +1,5 @@
 export PULSE_LATENCY_MSEC=30
 
-systemctl --user import-environment DISPLAY
-dunst &
 xcompmgr &
 
 while true; do
@@ -15,7 +13,12 @@ while true ; do
 	xrandr --output HDMI-A-0 --auto --output HDMI-A-1 --auto --left-of HDMI-A-0
 	xset r rate 170 40
 	wal -R
+	pkill dunst ; dunst &
 	feh --no-fehbg --bg-scale "$(< "${HOME}/.cache/wal/wal")"
+
+	if [ -z "$DBUS_SESSION_BUS_ADDRESS" ] ; then
+		export $(dbus-launch --exit-with-session)
+	fi
 
 	dwm && continue || break
 done
