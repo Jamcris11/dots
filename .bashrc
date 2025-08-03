@@ -10,11 +10,12 @@ export DISPLAY=:0
 alias ls='ls --color=auto'
 alias grep='grep --color=auto'
 
-COLOR1='\[$(tput setaf 2)\]'
-COLOR2='\[$(tput setaf 4)\]'
-COLOR3='\[$(tput setaf 5)\]'
+COLOR1='\[$(tput setaf 1)\]'
+COLOR2='\[$(tput setaf 8)\]'
+COLOR3='\[$(tput setaf 7)\]'
+COLOR4='\[$(tput setaf 11)\]'
 DCOLOR='\[$(tput sgr0)\]'
-PS1="${COLOR3}<${COLOR1}\u:${COLOR2}\h \w${COLOR3}>${DCOLOR} "
+PS1="${COLOR3}<${COLOR1}\u:${COLOR4}\h ${COLOR2}\w${COLOR3}>${DCOLOR} "
 
 # USER DEFINES
 
