@@ -22,7 +22,7 @@ PS1="${COLOR3}<${COLOR1}\u:${COLOR4}\h ${COLOR2}\w${COLOR3}>${DCOLOR} "
 alias vim='nvim'
 alias sxiv='sxiv -b'
 
-export PATH=$PATH:~/.scripts/:~/.local/bin
+export PATH=$PATH:~/.scripts/:~/.scripts/personal:~/.local/bin
 export LD_LIBRARY_PATH=/usr/local/lib
 
 export EDITOR=/usr/bin/nvim
