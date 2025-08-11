@@ -1,6 +1,7 @@
 export PULSE_LATENCY_MSEC=30
 
 xcompmgr &
+redshift &
 
 while true; do
 	/home/jamie/.scripts/dwm-status
