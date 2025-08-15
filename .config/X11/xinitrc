@@ -1,6 +1,6 @@
 export PULSE_LATENCY_MSEC=30
 
-xcompmgr &
+picom &
 redshift &
 
 while true; do
