@@ -7,6 +7,9 @@ vim.api.nvim_command("set number relativenumber")
 vim.api.nvim_command("set noswapfile")
 vim.api.nvim_command("set shiftwidth=4")
 vim.api.nvim_command("set tabstop=4")
+vim.api.nvim_command("set title")
+vim.api.nvim_command("set titleold=st")
+vim.api.nvim_command("set titlestring=nvim")
 
 vim.cmd.colorscheme 'slate'
 
