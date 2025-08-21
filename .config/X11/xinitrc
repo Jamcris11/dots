@@ -13,9 +13,8 @@ while true ; do
 	# needs non-hardcoded alternative
 	xrandr --output HDMI-A-0 --auto --output HDMI-A-1 --auto --left-of HDMI-A-0
 	xset r rate 170 40
-	wal -R
 	pkill dunst ; dunst &
-	feh --no-fehbg --bg-scale "$(< "${HOME}/.cache/wal/wal")"
+	feh --no-fehbg --bg-fill "$(< "${HOME}/.cache/wal/wal")"
 
 	if [ -z "$DBUS_SESSION_BUS_ADDRESS" ] ; then
 		export $(dbus-launch --exit-with-session)
@@ -23,3 +22,6 @@ while true ; do
 
 	dwm && continue || break
 done
+
+pkill redshift
+pkill picom
