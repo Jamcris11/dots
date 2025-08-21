@@ -13,6 +13,17 @@ vim.api.nvim_command("set titlestring=nvim")
 
 vim.cmd.colorscheme 'slate'
 
+vim.api.nvim_create_user_command(
+	"Bang",
+	function(opts)
+		vim.api.nvim_win_set_cursor(0, {1,0})
+		vim.api.nvim_put({"#!/usr/bin/env bash", ""}, "", false, true)
+		vim.api.nvim_put({"# Copyright (c) " .. os.date("%Y") .. " Jim", ""}, "", false, true)
+		vim.api.nvim_put({"# /", ""}, "", false, true)
+	end,
+	{ desc = "Insert shebang and copyright notice" }
+)
+
 vim.api.nvim_create_autocmd('BufRead', {
 	callback = function(opts)
 		vim.api.nvim_create_autocmd('BufWinEnter', {
